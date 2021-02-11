@@ -7,13 +7,25 @@ public class Main {
         Customer c1 = new Customer("Jon");
         Account account = new Account(c1);
 
-        int newBalance = account.depositAmount(125);
-        System.out.println(String.format("New balance: %d", newBalance));
 
-        newBalance = account.depositAmount(325);
-        System.out.println(String.format("New balance: %d", newBalance));
-
-        newBalance = account.withDrawAmount(220);
-        System.out.println(String.format("New balance: %d", newBalance));
+        int newBalance = 0;
+        try {
+            newBalance = account.depositAmount(-5);
+            System.out.println(String.format("New balance: %d", newBalance));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            newBalance = account.depositAmount(325);
+            System.out.println(String.format("New balance: %d", newBalance));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            newBalance = account.withDrawAmount(220);
+            System.out.println(String.format("New balance: %d", newBalance));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

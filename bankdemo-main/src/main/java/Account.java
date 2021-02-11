@@ -17,7 +17,6 @@ public class Account {
     }
 
     public int getBalance(){
-        // TODO: skal debugges
         int sum = 0;
         for (Transaction transaction : transactions) {
             sum += transaction.getAmount();
@@ -25,15 +24,18 @@ public class Account {
         return sum;
     }
 
-    public int withDrawAmount(int amount){
-        // TODO: skal kodes og returnere ny saldo. Smid fejl hvis amount > saldo
+    public int withDrawAmount(int amount) throws Exception{
+        if(amount > getBalance())
+            throw new Exception();
+
         transactions.add(new Transaction(-amount, new Date()));
 
         return getBalance();
     }
 
-    public int depositAmount(int amount){
-        // TODO: skal debugges og returnere ny saldo. Smid fejl hvis amount < 0.
+    public int depositAmount(int amount) throws Exception{
+        if(amount < 0)
+            throw new Exception();
         transactions.add(new Transaction(amount, new Date()));
 
         return getBalance();
