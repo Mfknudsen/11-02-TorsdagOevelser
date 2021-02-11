@@ -14,9 +14,13 @@ public class Customer {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Customer)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Customer))
+            return false;
+
         Customer customer = (Customer) o;
+
         return Objects.equals(getName(), customer.getName());
     }
 
