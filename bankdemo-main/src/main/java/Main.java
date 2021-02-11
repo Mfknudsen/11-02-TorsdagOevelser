@@ -15,12 +15,15 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         try {
             newBalance = account.depositAmount(325);
             System.out.println(String.format("New balance: %d", newBalance));
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
         try {
             newBalance = account.withDrawAmount(220);
             System.out.println(String.format("New balance: %d", newBalance));
